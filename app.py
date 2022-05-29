@@ -5,7 +5,7 @@ app = Flask(__name__)
 
  
 #app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///survey.db'
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgres://tnrgbwnynyxovg:de6af4142eaa7684b81855198ccecd05137670fe5dd055b92b8f09672d8593df@ec2-52-21-136-176.compute-1.amazonaws.com:5432/d4eg7o4urrafn6'
+app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://tnrgbwnynyxovg:de6af4142eaa7684b81855198ccecd05137670fe5dd055b92b8f09672d8593df@ec2-52-21-136-176.compute-1.amazonaws.com:5432/d4eg7o4urrafn6'
 
 db = SQLAlchemy(app)
 
