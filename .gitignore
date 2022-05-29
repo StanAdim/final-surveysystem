@@ -1,0 +1,10 @@
+#Virtual env
+venv/
+
+#Flask
+instance/*
+
+.webassets-cache
+__pycache__
+.py[cod]
+*py.class
