@@ -4,8 +4,8 @@ from datetime import datetime
 app = Flask(__name__)
 
  
-#app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///survey.db'
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://tnrgbwnynyxovg:de6af4142eaa7684b81855198ccecd05137670fe5dd055b92b8f09672d8593df@ec2-52-21-136-176.compute-1.amazonaws.com:5432/d4eg7o4urrafn6'
+app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///survey.db'
+# app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://tnrgbwnynyxovg:de6af4142eaa7684b81855198ccecd05137670fe5dd055b92b8f09672d8593df@ec2-52-21-136-176.compute-1.amazonaws.com:5432/d4eg7o4urrafn6'
 
 db = SQLAlchemy(app)
 
@@ -57,19 +57,22 @@ def send_data_responses(Qn1 ,Qn2 , Qn3):
 def survey_records():#queryResponse = Respond.query.all()
     AgreedResponseQn1 = Respond.query.filter(Respond.Qn1 == 1).all()
     No_AgreedResponseQn1 = len(AgreedResponseQn1)
+    
 
     AgreedResponseQn2 = Respond.query.filter(Respond.Qn2 == 1).all()
     No_AgreedResponseQn2 = len(AgreedResponseQn2)
 
     AgreedResponseQn3 = Respond.query.filter(Respond.Qn3 == 1).all()
     No_AgreedResponseQn3 = len(AgreedResponseQn3)
-
+  
     sum1 = No_AgreedResponseQn1 + No_AgreedResponseQn2 + No_AgreedResponseQn3
+    
     perc_agr_1 =percent(No_AgreedResponseQn1,sum1)
     perc_agr_2 =percent(No_AgreedResponseQn2,sum1)
     perc_agr_3 =percent(No_AgreedResponseQn3,sum1)
+    
   
-#--------------------------------------------------------------------------------
+# #--------------------------------------------------------------------------------
     NeutralResponseQn1 = Respond.query.filter(Respond.Qn1 == 2).all()
     No_NeutralResponseQn1 = len(NeutralResponseQn1)
 
@@ -83,8 +86,8 @@ def survey_records():#queryResponse = Respond.query.all()
     perc_neu_1 =percent(No_NeutralResponseQn1,sum2)
     perc_neu_2 =percent(No_NeutralResponseQn2,sum2)
     perc_neu_3 =percent(No_NeutralResponseQn3,sum2)
-  
-    #--------------------------------------------------------------------------------
+   
+#     #--------------------------------------------------------------------------------
     DisagreedResponseQn1 = Respond.query.filter(Respond.Qn1 == 3).all()
     No_DisagreedResponseQn1 = len(DisagreedResponseQn1)
 
@@ -94,11 +97,12 @@ def survey_records():#queryResponse = Respond.query.all()
     DisagreedResponseQn3 = Respond.query.filter(Respond.Qn3 == 3).all()
     No_DisagreedResponseQn3 = len(DisagreedResponseQn3)
 
-    sum3 = No_NeutralResponseQn1 + No_NeutralResponseQn2 + No_NeutralResponseQn3
+    sum3 = No_DisagreedResponseQn1 + No_DisagreedResponseQn2 + No_DisagreedResponseQn3
     perc_dis_1 =percent(No_DisagreedResponseQn1,sum3)
     perc_dis_2 =percent(No_DisagreedResponseQn2,sum3)
     perc_dis_3 =percent(No_DisagreedResponseQn3,sum3)
-#----------------------------------return------------------------------------------------
+    # return render_template('rough.html',perc_dis_1 = perc_dis_1, perc_dis_2 =perc_dis_2,  perc_dis_3 =perc_dis_3 , sum3 = sum3)
+# #----------------------------------return------------------------------------------------
     return render_template('survey.html', No_AgreedResponseQn1 = No_AgreedResponseQn1 ,
     No_AgreedResponseQn2 = No_AgreedResponseQn2, 
     No_AgreedResponseQn3 =No_AgreedResponseQn3,

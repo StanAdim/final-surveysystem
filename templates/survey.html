@@ -73,18 +73,37 @@
             <div class="col">
               <h4 class="h4">Question 1</h4>
           </div>
-         
-            <div class="progress ">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">{{perc_agr_1}}%</div>
+          <span class="h6 text-success ">Agreed</span>
+            <div class="progress m-1 ">
+            
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{perc_agr_1}}%;"
+               aria-valuenow="{{perc_agr_1}}" aria-valuemin="0" aria-valuemax="100">{{perc_agr_1}}%</div>
             </div>
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">{{perc_agr_2}}%</div>
+            <span class="h6 text-warning">Neutral</span>
+            <div class="progress  m-1">
+              
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{perc_neu_1}}%;"
+               aria-valuenow="{{perc_neu_1}}" aria-valuemin="0" aria-valuemax="100">{{perc_neu_1}}%</div>
             </div>
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">{{perc_agr_3}}%</div>
+            <span class="h6 text-danger">Disagreed</span>
+            <div class="progress  m-1">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{perc_dis_1}}%;"
+               aria-valuenow="{{perc_dis_1}}" aria-valuemin="0" aria-valuemax="100">{{perc_dis_1}}%</div>
             </div>
-            <div class="col">
-              <h5 class="h5">Recommendations</h5>
+            <div class="col">              
+              <div class="card m-2  ">
+                <div class="card-header text-center"><h5 class="h5">Recommendations</h5></div>
+                <div class="card-body text-center">
+                  {% if perc_dis_1 > perc_agr_1 %}
+                          Bad Service
+                          {% elif perc_dis_1 == perc_agr_1 %}                        
+                          Moderate
+                          {% else%}
+                          Good Service
+                  {% endif%}
+                  
+                </div>
+              </div>
 
           </div>
           </div>
@@ -93,19 +112,35 @@
             <div class="col">
               <h4 class="h4">Question 2</h4>
           </div>
-         
-            <div class="progress ">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">{{perc_neu_1}}%</div>
+          <span class="h6 text-success ">Agreed</span>
+            <div class="progress m-1">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{perc_agr_2}}%;" 
+              aria-valuenow="{{perc_agr_2}}" aria-valuemin="0" aria-valuemax="100">{{perc_agr_2}}%</div>
             </div>
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">{{perc_neu_2}}%</div>
+            <span class="h6 text-warning ">Neutral</span>
+            <div class="progress m-1">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{perc_neu_2}}%;" 
+              aria-valuenow="{{perc_neu_2}}" aria-valuemin="0" aria-valuemax="100">{{perc_neu_2}}%</div>
             </div>
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">{{perc_neu_3}}%</div>
+            <span class="h6 text-danger ">Disagreed</span>
+            <div class="progress m-1">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{perc_dis_2}}%;"
+               aria-valuenow="{{perc_dis_2}}" aria-valuemin="0" aria-valuemax="100">{{perc_dis_2}}%</div>
             </div>
             <div class="col">
-              <h5 class="h5">Recommendations</h5>
-
+              <div class="card m-2  ">
+                <div class="card-header text-center"><h5 class="h5">Recommendations</h5></div>
+                <div class="card-body text-center">
+                  {% if perc_dis_2 > perc_agr_2 %}
+                          Bad Service
+                          {% elif perc_dis_2 == perc_agr_2 %}                        
+                          Moderate
+                          {% else%}
+                          Good Service
+                  {% endif%}
+                  
+                </div>
+              </div>
           </div>
           </div>
           <div class="col">
@@ -113,19 +148,35 @@
             <div class="col">
               <h4 class="h4">Question 3</h4>
           </div>
-         
-            <div class="progress ">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">{{perc_dis_1}}%</div>
+          <span class="h6 text-success ">Agreed</span>
+            <div class="progress m-1 ">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{perc_agr_3}}%;"
+               aria-valuenow="{{perc_agr_3}}" aria-valuemin="0" aria-valuemax="100">{{perc_agr_3}}%</div>
             </div>
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">{{perc_dis_2}}%</div>
+            <span class="h6 text-warning ">Neutral</span>
+            <div class="progress m-1">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{perc_neu_3}}%;"
+               aria-valuenow="{{perc_neu_3}}" aria-valuemin="0" aria-valuemax="100">{{perc_neu_3}}%</div>
             </div>
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">{{perc_dis_3}}%</div>
+            <span class="h6 text-danger ">Disagreed</span>
+            <div class="progress m-1">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{perc_dis_3}}%;"
+               aria-valuenow="{{perc_dis_3}}" aria-valuemin="0" aria-valuemax="100">{{perc_dis_3}}%</div>
             </div>
             <div class="col">
-              <h5 class="h5">Recommendations</h5>
-
+              <div class="card m-2  ">
+                <div class="card-header text-center"><h5 class="h5">Recommendations</h5></div>
+                <div class="card-body text-center">
+                  {% if perc_dis_3 > perc_agr_3 %}
+                          Good Service
+                          {% elif perc_dis_3 == perc_agr_3 %}                        
+                      Moderate
+                          {% else%}
+                          Bad Service
+                  {% endif%}
+                  
+                </div>
+              </div>
           </div>
           </div>
 
